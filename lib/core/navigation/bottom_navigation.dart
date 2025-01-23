@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:notification_using_api_flutter/core/config/app_colors.dart';
 import 'package:notification_using_api_flutter/features/home/presentation/screens/home_screen.dart';
 
 class BottomNavigationBarScreen extends StatelessWidget {
@@ -24,6 +25,7 @@ class BottomNavigationBarScreen extends StatelessWidget {
           )
         ]),
         child: BottomNavigationBar(
+            backgroundColor: AppColors.whiteColor,
             type: BottomNavigationBarType.fixed,
             selectedItemColor: Colors.black54,
             unselectedItemColor: Colors.black54,

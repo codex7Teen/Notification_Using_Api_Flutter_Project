@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:notification_using_api_flutter/core/config/app_colors.dart';
 import 'package:notification_using_api_flutter/core/config/app_text_styles.dart';
+import 'package:notification_using_api_flutter/features/home/presentation/widgets/home_screen_widgets.dart';
 
 class ScreenHome extends StatelessWidget {
   final List<String> navBarImages = [
@@ -16,70 +17,76 @@ class ScreenHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.white,
         body: SafeArea(
-      child: Padding(
-        padding: EdgeInsets.only(top: 18, left: 18, right: 18),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            //! LOCATION SELECTOR
-            Row(
-              spacing: 4,
-              children: [
-                Icon(
-                  Icons.location_on_rounded,
-                  color: AppColors.greenAppthemeColor,
-                ),
-                Text('ABCD, New Delhi', style: AppTextStyles.locationText),
-                Icon(Icons.keyboard_arrow_down_rounded,
-                    color: AppColors.greenAppthemeColor, size: 28)
-              ],
-            ),
-            SizedBox(height: 15),
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.only(top: 18, left: 18, right: 18),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  //! LOCATION SELECTOR
+                  HomeScreenWidgets.buildLocationDisplay(),
+                  SizedBox(height: 15),
 
-            //! SEARCH-BAR
-            Row(
-              spacing: 10,
-              children: [
-                Expanded(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 15),
-                    height: 50,
-                    decoration: BoxDecoration(
-                        color: AppColors.searchbarLightGreyColor,
-                        borderRadius: BorderRadius.circular(6)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('Search for products/stores',
-                            style: AppTextStyles.searchBarText),
-                        Image.asset('assets/images/search_icon.png',
-                            color: AppColors.greenAppthemeColor, width: 24)
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 3),
-                  child: Icon(Icons.notifications_none_outlined,
-                      size: 32, color: AppColors.redColor),
-                ),
-                Icon(Icons.local_offer_outlined,
-                    size: 27, color: AppColors.orangeColor)
-              ],
-            ),
-            SizedBox(
-              height: 18,
-            ),
+                  //! SEARCH-BAR
+                  HomeScreenWidgets.buildSearchBar(),
+                  SizedBox(height: 18),
 
-            //! CATEGORY SECTION TITILE
-            Text(
-              'What would you like to do today?',
-              style: AppTextStyles.appMainSubtitles,
-            )
-          ],
-        ),
-      ),
-    ));
+                  //! CATEGORY SECTION TITILE
+                  HomeScreenWidgets.buildCategoryTitle(),
+                  SizedBox(height: 14),
+
+                  //! CATEGORIES GRIDVIEW
+                  HomeScreenWidgets.buildCategories(context),
+                  SizedBox(height: 16),
+
+                  //! TOP PICKS HEADING
+                  HomeScreenWidgets.buildToppicks(),
+                  SizedBox(height: 14),
+
+                  //! TOP PICKS BANNER
+                  HomeScreenWidgets.buildTopPicksBanner(),
+                  SizedBox(height: 24),
+
+                  //! TRENDIND & SEEALL TEXT
+                  HomeScreenWidgets.buildTrendingTextAndMoreText(),
+                  SizedBox(height: 14),
+
+                  //! TRENDING ITEMS LIST
+                  HomeScreenWidgets.buildTrendingItems(),
+                  SizedBox(height: 24),
+
+                  //! CRAZE DEALS TEXT
+                  HomeScreenWidgets.buildCrazeDealsText(),
+                  SizedBox(height: 14),
+
+                  //! CRAZE DEALS BANNERS LIST
+                  HomeScreenWidgets.buildScrollableCrazeDealsBanners(),
+                  SizedBox(height: 24),
+
+                  //! REFER AND EARN BANNER
+                  HomeScreenWidgets.buildReferAndEarnBanner(),
+                  SizedBox(height: 24),
+
+                  //! NEARBY STORES SECTION
+                  HomeScreenWidgets.buildNearbyandSeeallText(),
+                  SizedBox(height: 14),
+
+                  //! NEARBY STORE ITEMS
+                  HomeScreenWidgets.buildNearbyStoreItem(),
+                  SizedBox(height: 22),
+                  HomeScreenWidgets.buildNearbyStoreItem(),
+                  SizedBox(height: 50),
+
+                  //! VIEW ALL STORE BUTTON
+                  HomeScreenWidgets.buildViewallStoresButton(),
+                  SizedBox(height: 40)
+                ],
+              ),
+            ),
+          ),
+        ));
   }
 }
