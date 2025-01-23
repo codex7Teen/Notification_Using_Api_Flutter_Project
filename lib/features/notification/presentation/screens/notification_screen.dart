@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:notification_using_api_flutter/core/config/app_colors.dart';
+import 'package:notification_using_api_flutter/core/config/app_text_styles.dart';
 import 'package:notification_using_api_flutter/data/services/notification_services.dart';
 import 'package:notification_using_api_flutter/features/notification/bloc/notification_bloc/notification_bloc.dart';
 import 'package:notification_using_api_flutter/features/notification/presentation/widgets/notification_screen_widgets.dart';
@@ -42,8 +42,10 @@ class ScreenNotifications extends StatelessWidget {
                         SizedBox(
                             height: 30,
                             width: 30,
-                            child: Image.asset(_getNotificationImagePath(
-                                notifications.image))),
+                            child: Image.asset(context
+                                .read<NotificationBloc>()
+                                .getNotificationImagePath(
+                                    notifications.image))),
                         SizedBox(width: 18),
                         Expanded(
                           child: Column(
@@ -53,28 +55,21 @@ class ScreenNotifications extends StatelessWidget {
                               Text(
                                   overflow: TextOverflow.ellipsis,
                                   notifications.title,
-                                  style: GoogleFonts.quicksand(
-                                      fontWeight: FontWeight.w900,
-                                      fontSize: 17,
-                                      color: AppColors.blackColor)),
+                                  style: AppTextStyles.notificationTitle),
                               SizedBox(height: 6),
                               Text(
                                 maxLines: 3,
                                 overflow: TextOverflow.ellipsis,
                                 notifications.body,
-                                style: GoogleFonts.quicksand(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 15,
-                                    color: AppColors.blackColor),
+                                style: AppTextStyles.notificationSubTitle,
                               ),
                               SizedBox(height: 4),
                               Text(
                                 overflow: TextOverflow.ellipsis,
-                                '57 mins ago',
-                                style: GoogleFonts.quicksand(
-                                    fontWeight: FontWeight.w300,
-                                    fontSize: 13.5,
-                                    color: Colors.black),
+                                context
+                                    .read<NotificationBloc>()
+                                    .formatTimestamp(notifications.timestamp),
+                                style: AppTextStyles.notificationTimeText,
                               )
                             ],
                           ),
@@ -88,25 +83,5 @@ class ScreenNotifications extends StatelessWidget {
             },
           ),
         ));
-  }
-
-  // Method to get image path based on api data
-  String _getNotificationImagePath(String imageName) {
-    switch (imageName) {
-      case 'order_assigned.png':
-        return 'assets/images/notification_images/order_assigned.png';
-      case 'order_delivered.png':
-        return 'assets/images/notification_images/order_delivered.png';
-      case 'order_cancelled.png':
-        return 'assets/images/notification_images/order_cancelled.png';
-      case 'promotion_marketplace.png':
-        return 'assets/images/notification_images/promotion_marketplace.png';
-      case 'promotion_notify.png':
-        return 'assets/images/notification_images/promotion_nootify.png';
-      case 'support_personnel.png':
-        return 'assets/images/notification_images/support_peersonnel.png';
-      default:
-        return 'assets/images/notification_images/order_assigned.png';
-    }
   }
 }

@@ -31,11 +31,11 @@ class AppTextStyles {
 
   //! TOP PICKS BANNER TEXT
   static TextStyle topPicksBannerMainText = GoogleFonts.poppins(
-      fontWeight: FontWeight.w700, fontSize: 22, color: Colors.white);
+      fontWeight: FontWeight.w700, fontSize: 22, color: AppColors.whiteColor);
 
   //! TOP PICKS BANNER BUTTON TEXT
   static TextStyle topPicksBannerButtonText = GoogleFonts.poppins(
-      fontWeight: FontWeight.w600, fontSize: 15, color: Colors.white);
+      fontWeight: FontWeight.w600, fontSize: 15, color: AppColors.whiteColor);
 
   //! TRENDING ITEM TTILE
   static TextStyle trendingItemTitle = GoogleFonts.quicksand(
@@ -58,7 +58,7 @@ class AppTextStyles {
 
   //! CRAZE DEALS BANNER MAIN TEXT
   static TextStyle crazedealsBannerMaintext = GoogleFonts.poppins(
-      fontWeight: FontWeight.w600, fontSize: 21, color: Colors.white);
+      fontWeight: FontWeight.w600, fontSize: 21, color: AppColors.whiteColor);
 
   //! CRAZE DEALS BANNER SECOND TEXT
   static TextStyle crazedealsBannerSecondText = GoogleFonts.quicksand(
@@ -67,4 +67,16 @@ class AppTextStyles {
   //! VIEW ALL STORES BUTTON
   static TextStyle buildViewallStoresButton = GoogleFonts.poppins(
       fontWeight: FontWeight.w600, fontSize: 14, color: AppColors.whiteColor);
+
+  //! NOTIFICATON TITLE
+  static TextStyle notificationTitle = GoogleFonts.quicksand(
+      fontWeight: FontWeight.w900, fontSize: 17, color: AppColors.blackColor);
+
+  //! NOTIFICATON SUBTITLE
+  static TextStyle notificationSubTitle = GoogleFonts.quicksand(
+      fontWeight: FontWeight.w400, fontSize: 15, color: AppColors.blackColor);
+
+  //! NOTIFICATON TIME TEXT
+  static TextStyle notificationTimeText = GoogleFonts.quicksand(
+      fontWeight: FontWeight.w300, fontSize: 13.5, color: Colors.black);
 }
