@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notification_using_api_flutter/data/models/notification_model.dart';
@@ -55,6 +57,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       emit(NotificationLoadingState());
       try {
         final notifications = await notificationServices.fetchNotifications();
+        log('BLOC: NOTIFICATION FETCHED SUCCESSFULLY');
         emit(NotificationLoadedState(notifications));
       } catch (error) {
         emit(NotificationErrorState(error.toString()));

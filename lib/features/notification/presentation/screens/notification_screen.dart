@@ -20,8 +20,12 @@ class ScreenNotifications extends StatelessWidget {
           builder: (context, state) {
             if (state is NotificationLoadingState) {
               return Center(
-                  child: CircularProgressIndicator(
-                      color: AppColors.greenAppthemeColor));
+                  child: SizedBox(
+                    width: 26,
+                    height: 26,
+                    child: CircularProgressIndicator(
+                        color: AppColors.greenAppthemeColor),
+                  ));
             } else if (state is NotificationErrorState) {
               return Center(child: Text('Failed to load notifications!!!'));
             } else if (state is NotificationLoadedState) {
