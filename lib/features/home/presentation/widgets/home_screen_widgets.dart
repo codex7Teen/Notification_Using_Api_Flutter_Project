@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:notification_using_api_flutter/core/config/app_colors.dart';
 import 'package:notification_using_api_flutter/core/config/app_text_styles.dart';
+import 'package:notification_using_api_flutter/features/notification/presentation/screens/notification_screen.dart';
 
 class HomeScreenWidgets {
   static Widget buildLocationDisplay() {
@@ -19,7 +20,7 @@ class HomeScreenWidgets {
     );
   }
 
-  static Widget buildSearchBar() {
+  static Widget buildSearchBar(BuildContext context) {
     return Row(
       spacing: 10,
       children: [
@@ -43,8 +44,13 @@ class HomeScreenWidgets {
         ),
         Padding(
           padding: const EdgeInsets.only(left: 3),
-          child: Icon(Icons.notifications_none_outlined,
-              size: 32, color: AppColors.redColor),
+          child: GestureDetector(
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => ScreenNotifications(),
+            )),
+            child: Icon(Icons.notifications_none_outlined,
+                size: 32, color: AppColors.redColor),
+          ),
         ),
         Icon(Icons.local_offer_outlined, size: 27, color: AppColors.orangeColor)
       ],

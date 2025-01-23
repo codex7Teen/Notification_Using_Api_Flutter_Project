@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:notification_using_api_flutter/core/config/app_colors.dart';
-import 'package:notification_using_api_flutter/core/config/app_text_styles.dart';
 import 'package:notification_using_api_flutter/features/home/presentation/widgets/home_screen_widgets.dart';
 
 class ScreenHome extends StatelessWidget {
@@ -31,7 +28,7 @@ class ScreenHome extends StatelessWidget {
                   SizedBox(height: 15),
 
                   //! SEARCH-BAR
-                  HomeScreenWidgets.buildSearchBar(),
+                  HomeScreenWidgets.buildSearchBar(context),
                   SizedBox(height: 18),
 
                   //! CATEGORY SECTION TITILE
