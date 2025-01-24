@@ -79,4 +79,11 @@ class AppTextStyles {
   //! NOTIFICATON TIME TEXT
   static TextStyle notificationTimeText = GoogleFonts.quicksand(
       fontWeight: FontWeight.w300, fontSize: 13.5, color: Colors.black);
+
+  //! NOTIFICATON BELL ICON TEXT STYLE
+  static TextStyle notificationIconTextStyle = GoogleFonts.roboto(
+    fontWeight: FontWeight.w700,
+    fontSize: 12,
+    color: AppColors.whiteColor,
+  );
 }

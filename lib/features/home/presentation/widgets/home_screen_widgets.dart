@@ -48,8 +48,23 @@ class HomeScreenWidgets {
             onTap: () => Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => ScreenNotifications(),
             )),
-            child: Icon(Icons.notifications_none_outlined,
-                size: 32, color: AppColors.redColor),
+            child: Stack(
+              children: [
+                Icon(Icons.notifications_none_outlined,
+                    size: 32, color: AppColors.redColor),
+                Positioned(
+                    right: 0,
+                    top: -5,
+                    child: Container(
+                      padding: EdgeInsets.only(
+                          left: 5, right: 5, top: 4, bottom: 5.6),
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle, color: AppColors.redColor),
+                      child: Text('2',
+                          style: AppTextStyles.notificationIconTextStyle),
+                    ))
+              ],
+            ),
           ),
         ),
         Icon(Icons.local_offer_outlined, size: 27, color: AppColors.orangeColor)
