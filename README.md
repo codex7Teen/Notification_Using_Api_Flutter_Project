@@ -1,8 +1,10 @@
 # notification_using_api_flutter
 
+
 Overview
 
 This project is a static e-commerce application featuring complex UI elements designed for an engaging and seamless user experience. It includes a page that fetches real-time notifications from a live API, ensuring smooth and dynamic updates.
+
 
 Features
 
@@ -13,6 +15,8 @@ Static E-Commerce Interface: Product listing, category-based navigation, and int
 Real-Time Notification Page: Fetches notifications dynamically from an API.
 
 Clean Architecture: Proper separation of concerns (Presentation, Domain, Data layers).
+
+
 
 Technology Stack
 
@@ -26,6 +30,8 @@ State Management: GetX/Provider/BLoC (as applicable)
 
 Clean Architecture (for better structuring and maintainability)
 
+
+
 Installation & Setup
 
 Prerequisites
@@ -37,6 +43,8 @@ Flutter SDK
 Dart SDK
 
 Android Studio or Visual Studio Code (with Flutter extensions)
+
+
 
 Steps to Run Locally
 
@@ -57,11 +65,15 @@ Run the Application:
 flutter run
 
 
+
+
 GitHub Hosting
 
 The project is hosted on GitHub with proper documentation and comments.
 
 Structured repository for easy navigation and contribution.
+
+
 
 Challenges & Solutions
 
@@ -73,6 +85,8 @@ Real-Time Updates: Used periodic API polling or WebSockets for smooth notificati
 
 Code Maintainability: Applied Clean Architecture principles for scalability.
 
+
+
 Future Enhancements
 
 Backend integration for a full-fledged e-commerce experience.
@@ -83,6 +97,8 @@ Push notifications for updates.
 
 Enhanced filtering and sorting options.
 
+
+
 Contributing
 
 Fork the repository.
@@ -92,6 +108,8 @@ Create a new branch.
 Make your changes and commit them.
 
 Push to your fork and submit a pull request.
+
+
 
 License
 
